@@ -1,0 +1,245 @@
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #000, #001aff);
+    color: white;
+    overflow-x: hidden;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li:first-child {
+    margin-left: 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    transition: color 0.3s, background 0.3s, transform 0.3s;
+    border-radius: 5px;
+}
+
+.navbar ul li a:hover {
+    color: #002fff;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero {
+    background: rgba(0, 0, 0, 0.7); /* Adjusted background color */
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Ensure content wraps properly */
+    gap: 20px;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero-text p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #002fff;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #001aff;
+    animation: pulse 1s infinite; /* Apply the pulse animation */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 47, 255, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(0, 47, 255, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 47, 255, 0);
+    }
+}
+
+.hero-video {
+    flex: 1;
+    max-width: 100%;
+    margin-top: 20px; /* Adjust spacing */
+    animation: fadeIn 1s ease-in-out;
+}
+
+.features {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 80px 0;
+    text-align: center; /* Center align features section */
+}
+
+.features h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    justify-items: center;
+    padding: 0 20px; /* Added padding to center the features grid */
+    max-width: 100%; /* Ensure full width */
+    margin: 0 auto; /* Center align */
+}
+
+.feature-item {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.feature-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+}
+
+.footer {
+    background-color: #002fff; /* Blue background */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar ul li {
+        margin-left: 10px;
+    }
+
+    .hero-text h1 {
+        font-size: 3em;
+    }
+
+    .hero-text p {
+        font-size: 1.2em;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button {
+        padding: 12px 30px;
+    }
+}
